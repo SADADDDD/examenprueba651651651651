@@ -74,6 +74,9 @@ class Index {
                 asar: true,
                 publish: [{
                     provider: "github",
+                    owner: "Lighdx",
+                    repo: "Arepx-Launcher",
+                    private : true,
                     releaseType: 'release',
                 }],
                 win: {
