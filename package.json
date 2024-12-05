@@ -2,7 +2,7 @@
     "name": "Arepx-Launcher",
     "preductname": "Arepx Launcher",
     "version": "1.0.0",
-    "description": "Arepx Launcher Mincraft a custom launcher",
+    "description": "Arepx Launcher - minecraft a custom launcher",
     "main": "src/app.js",
     "author": {
         "name": "Lighdx",
