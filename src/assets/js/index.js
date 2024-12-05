@@ -30,9 +30,9 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "", "author": "Lighdx" },
-            { "message": "", "author": "Lighdx" },
-            { "message": "", "author": "Lighdx" }
+            { "message": "", "author": "Arepx Launcher" },
+            { "message": "", "author": "Arepx Launcher" },
+            { "message": "", "author": "Arepx Launcher" },
         ];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;

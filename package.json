@@ -7,7 +7,7 @@
     "author": {
         "name": "Lighdx",
         "email": "contact@luuxis.fr",
-        "url": "https://github.com/lighdx"
+        "url": "https://github.com/Lighdx"
     },
     "url": "http://102.129.137.137/arepxlauncher",
     "scripts": {
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Lighdx/Arepx-Launcher.git"
+        "url": "git+https://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@github.com/Lighdx/Arepx-Launcher.git"
     }
 }
