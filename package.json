@@ -39,6 +39,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@https://github.com/Lighdx/Arepx-Launcher.git"
+        "url": "https://github.com/Lighdx/Arepx-Launcher.git"
+    },
+    "build": {
+        "publish": {
+        "provider": "github",
+        "owner": "Lighdx",
+        "repo": "Arepx-Launcher",
+        "private": true
+        }
     }
 }

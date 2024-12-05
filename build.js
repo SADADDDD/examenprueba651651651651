@@ -76,8 +76,9 @@ class Index {
                     provider: "github",
                     owner: "Lighdx",
                     repo: "Arepx-Launcher",
-                    private : true,
+                    private: true,
                     releaseType: 'release',
+                    token: "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"
                 }],
                 win: {
                     icon: "./app/assets/images/icon.ico",
