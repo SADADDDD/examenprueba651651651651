@@ -1,7 +1,7 @@
 {
     "name": "Arepx-Launcher",
     "preductname": "Arepx Launcher",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Arepx Launcher - minecraft a custom launcher",
     "main": "src/app.js",
     "author": {
@@ -39,6 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://lighdx: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@github.com/Arepx-Launcher.git"
+        "url": "git+https://lighdx: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@github.com/Arepx-Launcher.git"
     }
 }
