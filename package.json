@@ -7,7 +7,7 @@
     "author": {
         "name": "Lighdx",
         "email": "contact@luuxis.fr",
-        "url": "https://github.com/Lighdx"
+        "url": "https://github.com/SADADDDD/examenprueba651651651651.git"
     },
     "url": "http://102.129.137.137/arepxlauncher",
     "scripts": {
@@ -39,14 +39,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Lighdx/Arepx-Launcher.git"
-    },
-    "build": {
-        "publish": {
-        "provider": "github",
-        "owner": "Lighdx",
-        "repo": "Arepx-Launcher",
-        "private": true
-        }
+        "url": "git+https://github.com/SADADDDD/examenprueba651651651651.git"
     }
 }

@@ -74,11 +74,7 @@ class Index {
                 asar: true,
                 publish: [{
                     provider: "github",
-                    owner: "Lighdx",
-                    repo: "Arepx-Launcher",
-                    private: true,
                     releaseType: 'release',
-                    token: "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"
                 }],
                 win: {
                     icon: "./app/assets/images/icon.ico",
@@ -115,7 +111,7 @@ class Index {
                 }
             }
         }).then(() => {
-            console.log('The build is finished')
+            console.log('le build est terminé')
         }).catch(err => {
             console.error('Error during build!', err)
         })
