@@ -78,7 +78,7 @@ class Index {
                     repo: "Arepx-Launcher",
                     private: true,
                     releaseType: 'release',
-                    token: "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"
+                    token: "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"
                 }],
                 win: {
                     icon: "./app/assets/images/icon.ico",
