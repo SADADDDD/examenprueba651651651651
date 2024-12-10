@@ -1,7 +1,7 @@
 {
     "name": "arepx-launcher",
     "preductname": "Arepx Launcher",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Minecraft Launcher custom",
     "main": "src/app.js",
     "author": {
