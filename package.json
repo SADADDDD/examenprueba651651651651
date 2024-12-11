@@ -1,7 +1,7 @@
 {
     "name": "arepx-launcher",
     "preductname": "Arepx Launcher",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Minecraft Launcher custom",
     "main": "src/app.js",
     "author": {
@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "axios": "^1.7.9",
+        "discord-rpc": "^4.0.1",
         "electron-updater": "^6.1.8",
         "minecraft-java-core": "^3.11.2",
         "node-bdd": "^2.0.4",

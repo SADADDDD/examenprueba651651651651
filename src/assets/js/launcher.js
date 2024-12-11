@@ -2,18 +2,16 @@
  * @author Luuxis
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
-// import panel
 import Login from './panels/login.js';
 import Home from './panels/home.js';
 import Settings from './panels/settings.js';
 
-// import modules
 import { logger, config, changePanel, database, popup, setBackground, accountSelect, addAccount, pkg } from './utils.js';
 const { AZauth, Microsoft, Mojang } = require('minecraft-java-core');
 
-// libs
 const { ipcRenderer } = require('electron');
 const fs = require('fs');
+const { Client } = require('discord-rpc');
 
 class Launcher {
     async init() {
@@ -27,7 +25,67 @@ class Launcher {
         this.db = new database();
         await this.initConfigClient();
         this.createPanels(Login, Home, Settings);
+        this.initLauncherRPC();
         this.startLauncher();
+
+        Launcher.instance = this;
+    }
+
+    initLauncherRPC() {
+        this.launcherRPC = new Client({ transport: 'ipc' });
+        const clientId = '1316431552451711028';
+
+        this.launcherRPC.on('ready', () => {
+            console.log('Launcher RPC Ready!');
+            this.launcherRPC.setActivity({
+                details: 'Waiting in the launcher...',
+                largeImageKey: 'icon',
+                largeImageText: 'Arepx Launcher',
+                startTimestamp: new Date(),
+            });
+        });
+
+        this.launcherRPC.login({ clientId }).catch(console.error);
+    }
+
+    stopLauncherRPC() {
+        if (this.launcherRPC) {
+            this.launcherRPC.destroy();
+            console.log('Launcher RPC Stopped.');
+        }
+    }
+
+    startGameRPC() {
+        if (this.launcherRPC) {
+            this.launcherRPC.destroy();
+            console.log('Launcher RPC Destroyed.');
+        }
+    
+        setTimeout(() => {
+            this.gameRPC = new Client({ transport: 'ipc' });
+            const clientId = '1316452719468347392';
+    
+            this.gameRPC.on('ready', () => {
+                console.log('Game RPC Ready!');
+                this.gameRPC.setActivity({
+                    details: 'Playing Hide and Seek...',
+                    largeImageKey: 'instance',
+                    largeImageText: 'Hide and Seek in Caracas',
+                    smallImageKey: 'icon',
+                    smallImageText: 'Arepx Launcher',
+                    startTimestamp: new Date(),
+                });
+            });
+    
+            this.gameRPC.login({ clientId }).catch(console.error);
+        }, 1000);
+    }
+    
+    stopGameRPC() {
+        if (this.gameRPC) {
+            this.gameRPC.destroy();
+            console.log('Game RPC Stopped.');
+        }
     }
 
     initLog() {
@@ -47,7 +105,6 @@ class Launcher {
             }
         })
     }
-
 
     errorConnect() {
         new popup().openPopup({
@@ -84,7 +141,7 @@ class Launcher {
                 java_config: {
                     java_path: null,
                     java_memory: {
-                        min: 2,
+                        min: 1,
                         max: 4
                     }
                 },
@@ -252,3 +309,4 @@ class Launcher {
 }
 
 new Launcher().init();
+export default Launcher;

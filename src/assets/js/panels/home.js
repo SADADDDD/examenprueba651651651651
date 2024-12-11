@@ -2,7 +2,8 @@
  * @author Luuxis
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
-import { config, database, logger, changePanel, appdata, setStatus, pkg, popup } from '../utils.js'
+import { config, database, logger, changePanel, appdata, setStatus, pkg, popup} from '../utils.js'
+import Launcher from '../launcher.js';
 
 const { Launch } = require('minecraft-java-core')
 const { shell, ipcRenderer } = require('electron')
@@ -15,11 +16,36 @@ class Home {
         this.socialLick()
         this.instancesSelect()
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
+        await this.initGameRPC();
     }
 
+    async initGameRPC() {
+        const launcherInstance = Launcher.instance;
+    
+        if (!launcherInstance || !launcherInstance.launcherRPC) {
+            console.error("Launcher RPC no está inicializado.");
+            return;
+        }
+    
+        await launcherInstance.startGameRPC();
+        console.log('Game RPC Ready!');
+    }
+    
+    stopGameRPC() {
+        const launcherInstance = Launcher.instance;
+        if (launcherInstance) {
+            if (launcherInstance.gameRPC) {
+                launcherInstance.gameRPC.destroy();
+                console.log('Game RPC Stopped.');
+            }
+    
+            launcherInstance.initLauncherRPC();
+            console.log('Switched back to Launcher RPC.');
+        }
+    }
+    
     socialLick() {
         let socials = document.querySelectorAll('.social-block')
-
         socials.forEach(social => {
             social.addEventListener('click', e => {
                 shell.openExternal(e.target.dataset.url)
@@ -169,7 +195,10 @@ class Home {
             }
         }
 
-        launch.Launch(opt);
+        launch.Launch(opt).then(() => {
+            console.log('Game Started!');
+            this.initGameRPC();
+        });
 
         playInstanceBTN.style.display = "none"
         infoStartingBOX.style.display = "block"
@@ -233,6 +262,7 @@ class Home {
             infoStarting.innerHTML = `Verificando...`
             new logger(pkg.name, '#7289da');
             console.log('Close');
+            this.stopGameRPC();
         });
 
         launch.on('error', err => {
