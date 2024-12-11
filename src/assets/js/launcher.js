@@ -63,15 +63,15 @@ class Launcher {
         console.log('Initializing Frame...')
         document.querySelector('.frame').classList.toggle('hide')
         document.querySelector('.dragbar').classList.toggle('hide')
-    
+
         document.querySelector('#minimize').addEventListener('click', () => {
             ipcRenderer.send('main-window-minimize');
         });
-    
+
         document.querySelector('#close').addEventListener('click', () => {
             ipcRenderer.send('main-window-close');
         })
-    }    
+    }
 
     async initConfigClient() {
         console.log('Initializing Config Client...')

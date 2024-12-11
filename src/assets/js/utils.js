@@ -113,7 +113,6 @@ async function setStatus(opt) {
     }
 }
 
-
 export {
     appdata as appdata,
     changePanel as changePanel,

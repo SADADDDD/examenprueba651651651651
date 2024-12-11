@@ -3,6 +3,9 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .login-tabs {
