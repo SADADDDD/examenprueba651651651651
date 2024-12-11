@@ -24,8 +24,8 @@ function createWindow() {
     destroyWindow();
     mainWindow = new BrowserWindow({
         title: pkg.preductname,
-        width: 550,
-        height: 750,
+        width: 540,
+        height: 650,
         resizable: false,
         icon: `./src/assets/images/icon.${os.platform() === "win32" ? "ico" : "png"}`,
         frame: os.platform() !== 'win32',

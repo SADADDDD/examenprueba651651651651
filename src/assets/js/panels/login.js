@@ -36,8 +36,8 @@ class Login {
 
         microsoftBtn.addEventListener("click", () => {
             popupLogin.openPopup({
-                title: 'Conectando...',
-                content: 'Espere por favor...',
+                title: 'Microsoft Login...',
+                content: 'Waiting connection...',
                 color: 'var(--color)'
             });
 

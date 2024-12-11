@@ -8,7 +8,7 @@
 .login-tabs {
     position: absolute;
     padding: 15px;
-    background: var(--background);
+    background: none; /* Cambiado a 'none' para eliminar el fondo negro */
     border-radius: 15px;
     text-align: center;
     min-width: 40%;
@@ -27,14 +27,29 @@
 
 .connect,
 .cancel {
-    background: none;
-    color: var(--color);
-    border: solid 4px var(--element-color);
-    border-radius: 10px;
-    padding: 0.3rem 4rem;
+    background: linear-gradient(315deg, rgba(234,0,255,1) 47%, rgba(68,158,178,1) 100%, rgba(224,10,250,1) 100%);
+    border: none; /* Quitamos el borde */
+    border-radius: 6px;
+    padding: 0.3rem 1rem;
     font-size: inherit;
     font-weight: bold;
+    color: white;
     margin: 15px 10px;
+    box-shadow: none; /* Asegura que no haya sombra alrededor */
+}
+
+.button-logo {
+    width: 20px; /* Ajusta el tamaño del logo */
+    height: 20px;
+    margin-right: 4px; /* Espacio entre el logo y el texto */
+    margin-bottom: 3px;
+    vertical-align: middle;
+}
+
+.connect:hover,
+.cancel:hover {
+    background-color: var(--hover-background); /* Opcional: Añadir un efecto de hover si se desea */
+    cursor: pointer;
 }
 
 .input-login .email,

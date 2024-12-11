@@ -81,129 +81,6 @@
 
 /*******************************************************************************
  *                                                                             *
- * news server                                                                 *
- *                                                                             *
- ******************************************************************************/
-
-.new-tab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 85%;
-    height: 100%;
-}
-
-.titre-tab-new {
-    margin-top: 1rem;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    background: var(--background-transparent);
-    color: var(--color);
-}
-
-.news-list {
-    width: 90%;
-    height: 100%;
-    border-radius: 10px;
-    margin: 1rem 0;
-}
-
-.news-block {
-    width: 100%;
-    margin: 0 0 1rem 0;
-    border-radius: 10px;
-    background: var(--background-transparent);
-}
-
-.news-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    align-items: center;
-}
-
-.header-text .title {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.news-header .date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.news-content .bbWrapper {
-    padding: 0 1.5rem;
-    padding-bottom: 1rem;
-    font-size: 1.2rem;
-
-}
-
-.news-content .bbWrapper p {
-    font-weight: 100;
-    margin: 0;
-
-}
-
-.news-content .bbWrapper .news-author {
-    margin-top: 1rem;
-    text-align: end;
-    font-size: 0.8rem;
-}
-
-.news-content .bbWrapper .news-author span {
-    font-weight: 700;
-}
-
-/*******************************************************************************
- *                                                                             *
- * social server                                                               *
- *                                                                             *
- ******************************************************************************/
-
-.social-tab {
-    position: absolute;
-    display: flex;
-    bottom: 0;
-    right: 0;
-    width: 15%;
-    height: calc(80% - 1rem);
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.social-list {
-    border-radius: 10px;
-    height: 100%;
-}
-
-.social-block {
-    display: flex;
-    background: var(--background-transparent);
-    width: 90px;
-    height: 90px;
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-block .icon-social {
-    pointer-events: none;
-    background-repeat: no-repeat;
-    height: 55%;
-    width: 55%;
-    filter: var(--svg-color);
-}
-
-/*******************************************************************************
- *                                                                             *
  * sidebar                                                                     *
  *                                                                             *
  ******************************************************************************/
@@ -212,9 +89,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 90px;
-    background: var(--background-transparent);
+    width: 60%;
+    height: 65px;
+    border-radius: 10px;
+    background: rgba(46, 45, 53, 0.87);
 }
 
 .player-options {
@@ -227,14 +105,14 @@
 }
 
 .player-head {
-    background: url('../../images/default/setve.png'), no-repeat;
+    background: url('../../images/default/steve.png'), no-repeat;
     background-size: cover;
     image-rendering: pixelated;
     transition: var(--transition);
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
     pointer-events: none;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .player-menu {
@@ -254,18 +132,18 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border: solid 3px var(--element-color);
-    border-radius: 15px;
-    height: 3.2rem;
-    padding-right: 1.9rem;
+    border: solid 3px #595883;
+    border-radius: 8px;
+    height: 2.5rem;
+    padding-right: 4rem;
 }
 
 .play-btn {
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     background: none;
     color: var(--color);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bolder;
     padding: 0 1.5rem;
     pointer-events: none;
@@ -306,7 +184,7 @@
 .progress-bar::-webkit-progress-bar {
     background-color: var(--background);
     border: solid 1px var(--element-color);
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .progress-bar::-webkit-progress-value {
@@ -315,10 +193,10 @@
 }
 
 .settings-btn {
-    width: 3rem;
-    height: 3rem;
-    font-size: 3rem;
-    color: var(--element-color);
+    width: 2rem;
+    height: 2.5rem;
+    font-size: 2.5rem;
+    color: white;
     margin: 0 1.5rem;
 }
 
